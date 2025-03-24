@@ -11,10 +11,7 @@ public class Test2 {
         String url = "https://www.avito.ru/moskva?cd=1&q=%D0%B3%D0%B8%D1%82%D0%B0%D1%80%D0%B0";
 
         try {
-            Document document = Jsoup.connect(url)
-                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3")
-                    .referrer("https://www.google.com")
-                    .get();
+            Document document = Jsoup.connect(url).get();
             Elements items = document.select("div.iva-item-body-GQomw");
 
             System.out.printf("%-50s %-20s %-15s %-20s%n", "Название", "Город", "Цена", "Продавец");
